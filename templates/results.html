@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Results</title>
+</head>
+<body>
+    <h1>Model Training Results</h1>
+    <ul>
+        {% for model, accuracy in accuracies.items() %}
+        <li>{{ model }}: {{ accuracy * 100 }}%</li>
+        {% endfor %}
+    </ul>
+    <form action="/predict" method="POST">
+        <label for="model">Choose a model:</label>
+        <select name="model">
+            <option value="SVM">SVM</option>
+            <option value="KNN">KNN</option>
+            <option value="Decision Tree">Decision Tree</option>
+        </select>
+        <input type="submit" value="Select Model">
+    </form>
+</body>
+</html>

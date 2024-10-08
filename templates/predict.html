@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make Prediction</title>
+</head>
+<body>
+    <h1>Enter Data for Diabetes Prediction (Using {{ model }})</h1>
+    <form action="/predict_result" method="POST">
+        <label>Pregnancies:</label><input type="number" name="Pregnancies"><br>
+        <label>Glucose:</label><input type="number" name="Glucose"><br>
+        <label>BloodPressure:</label><input type="number" name="BloodPressure"><br>
+        <label>SkinThickness:</label><input type="number" name="SkinThickness"><br>
+        <label>Insulin:</label><input type="number" name="Insulin"><br>
+        <label>BMI:</label><input type="number" name="BMI"><br>
+        <label>DiabetesPedigreeFunction:</label><input type="number" step="0.01" name="DiabetesPedigreeFunction"><br>
+        <label>Age:</label><input type="number" name="Age"><br>
+        <input type="hidden" name="model" value="{{ model }}">
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
